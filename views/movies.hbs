@@ -1,0 +1,23 @@
+<h1>Ironhack Cinema</h1>
+<p>Click on the movie to check the showtimes!</p>
+<a id="back-btn" href="/">Go back</a>
+
+{{#if allMoviesFetched}}
+
+<div id="all-movies-container">
+    {{#each allMoviesFetched}}
+        <div id="movie-card-entire">
+            <img src="{{this.image}}" alt="{{this.name}}">
+            <div id="movie-card-details">
+                <h4>{{this.title}}</h4>
+                <a href="/movies/{{this._id}}">See more</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{else}}
+
+<h2>Il n'y a pas encore de film enregistré dans la bibliothèque!</h2>
+
+{{/if}}

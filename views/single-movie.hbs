@@ -1,0 +1,22 @@
+<h1>Here is the movie you fetched</h1>
+
+{{#if singleMovieFetched}}
+<div id="image-and-movie-details">
+    <img src="{{singleMovieFetched.image}}" alt="{{singleMovieFetched.title}}">
+    <div id="single-movie-details">
+        <a href="/movies">Go back</a>
+        <h2>{{singleMovieFetched.title}}</h2>
+        <h3>Director: {{singleMovieFetched.director}}</h3>
+        <h4><em>Stars</em></h4>
+        <ul>
+            {{#each singleMovieFetched.stars}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <p>{{singleMovieFetched.description}}</p>
+        {{#each singleMovieFetched.showtimes}}
+            <span>{{this}} | </span>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
